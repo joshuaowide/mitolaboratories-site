@@ -20,28 +20,39 @@
       </div>
     </a>
 
-    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+      Menu
+    </button>
 
-    <nav id="navlinks" class="nav-links" data-nav-links>
-      <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+    <nav id="primary-nav" class="nav-links" data-nav-links aria-label="Primary">
+      <a class="nav-link" href="index.html">Home</a>
 
-      <div class="nav-item">
-        <a class="nav-link" href="company-about.html" aria-current="page">
+      <!-- Our Company dropdown -->
+      <div class="nav-item has-dropdown">
+        <button class="nav-link nav-button"
+                type="button"
+                data-dropdown-toggle
+                aria-expanded="false"
+                aria-controls="menu-company">
           Our Company <span class="chev" aria-hidden="true"></span>
-        </a>
-        <div class="dropdown" role="menu" aria-label="Our Company">
-          <a href="company-about.html">About us</a>
-          <a href="company-team.html">Meet our team</a>
-          <a href="company-news.html">News &amp; Events</a>
+        </button>
+
+        <div class="dropdown" id="menu-company" role="menu" aria-label="Our Company">
+          <a role="menuitem" href="company-about.html">About us</a>
+          <a role="menuitem" href="company-team.html">Meet our team</a>
+          <a role="menuitem" href="company-news.html">News &amp; Events</a>
         </div>
       </div>
 
-      <div class="nav-item"><a class="nav-link" href="pipeline.html">Pipeline</a></div>
-      <div class="nav-item"><a class="nav-link" href="science.html">Science</a></div>
-      <div class="nav-item"><a class="nav-link" href="disease-focus.html">Disease focus</a></div>
+      <a class="nav-link" href="pipeline.html">Pipeline</a>
+      <a class="nav-link" href="science.html">Science</a>
+      <a class="nav-link" href="disease-focus.html">Disease focus</a>
+
+      <a class="nav-link nav-cta" href="mailto:info@mitolaboratories.com">Contact</a>
     </nav>
   </div>
 </header>
+
 
 <main id="main">
   <section class="hero">
