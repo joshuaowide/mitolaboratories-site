@@ -9,6 +9,7 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="nav-shell">
     <a class="brand" href="index.html">
@@ -26,14 +27,14 @@
     <nav id="primary-nav" class="nav-links" data-nav-links aria-label="Primary navigation">
       <a class="nav-link" href="index.html">Home</a>
 
-      <div class="nav-item has-dropdown">
+      <div class="nav-item has-dropdown open">
         <button class="nav-link nav-button" type="button"
-                data-dropdown-toggle aria-expanded="false" aria-controls="company-menu">
+                data-dropdown-toggle aria-expanded="true" aria-controls="company-menu">
           Our Company <span class="chev" aria-hidden="true"></span>
         </button>
 
         <div class="dropdown" id="company-menu" role="menu" aria-label="Our Company">
-          <a class="dropdown-link" role="menuitem" href="company-about.html">About us</a>
+          <a class="dropdown-link" role="menuitem" href="company-about.html" aria-current="page">About us</a>
           <a class="dropdown-link" role="menuitem" href="company-team.html">Meet our team</a>
           <a class="dropdown-link" role="menuitem" href="company-news.html">News &amp; Events</a>
         </div>
@@ -48,7 +49,6 @@
   </div>
 </header>
 
-
 <main id="main">
   <section class="hero">
     <div class="container hero-grid">
@@ -56,7 +56,8 @@
         <div class="kicker"><b>Our Company</b> · mission and strategy</div>
         <h1>Platform-first therapeutics built around mitochondrial control.</h1>
         <p>
-          High-level story: what we do, why it matters, and how seed capital accelerates defined milestones.
+          We translate systems-level metabolic biology into protocolised, measurable programs —
+          designed to create clear seed-stage milestones.
         </p>
         <div class="btn-row">
           <a class="btn primary" href="pipeline.html">View pipeline</a>
@@ -67,7 +68,7 @@
       <aside class="hero-card">
         <div class="hero-img" style="background-image:url('assets/hero-company.jpg')"></div>
         <div class="hero-meta">
-          <h3 style="margin:0 0 8px;font-size:16px;">Seed plan (placeholder)</h3>
+          <h3 style="margin:0 0 8px;font-size:16px;">Seed plan (high level)</h3>
           <ul class="list">
             <li>Validate platform readouts</li>
             <li>Select lead program(s)</li>
@@ -80,40 +81,8 @@
 
   <section class="section">
     <div class="container">
-      <h2>Mission</h2>
-      <p>Replace this with a crisp mission statement in 1–2 sentences.</p>
+      <h2>About us</h2>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>What we do</h3>
-          <p>Define what “protocolised” means operationally and how it becomes programs.</p>
-        </div>
-        <div class="card">
-          <h3>Why it wins</h3>
-          <p>Summarise differentiation: systems approach, measurable readouts, translation strategy.</p>
-        </div>
-        <div class="card">
-          <h3>What seed funds</h3>
-          <p>Key experiments, capability build, lead selection, and investable milestones.</p>
-        </div>
-      </div>
-
-      <hr class="hr" />
-
-      <h2>Values (optional)</h2>
-      <ul class="list">
-        <li>Scientific rigour and measurement-first development</li>
-        <li>Platform thinking with indication-driven execution</li>
-        <li>Transparency and responsible communication</li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container">© 2026 Mito Laboratories. All rights reserved.</div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+      <p>
+        Modern oncology has delivered major advances, yet many therapeutic strategies still focus primarily on genomic
+        drivers or immune modulation. In parallel, a growing body o
