@@ -321,101 +321,148 @@ img{max-width:100%;display:block}
   font-size: 13px;
 }
 .footer a{color: var(--text)}
-
 /* =========================
-   NAV UPGRADE (DROPDOWNS)
+   FULL-WIDTH NAV SHELL
    ========================= */
 
-.nav-item.has-dropdown { position: relative; }
-
-.nav-button{
-  background: transparent;
-  border: 0;
-  cursor: pointer;
+.nav-shell{
+  width: 100%;
+  padding: 14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
 }
 
-/* Desktop dropdown: hidden by default, shown when .open is applied */
+/* keep your existing sticky/blur header if you want */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(11,18,32,.70);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+/* NAV LINKS ROW */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+/* Link look (this is what stops purple default links) */
+.nav-link{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: .02em;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  text-decoration: none;
+}
+.nav-link:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+/* Button reset for dropdown toggle */
+.nav-button{
+  cursor:pointer;
+  border: 1px solid transparent;
+}
+.nav-button:focus{ outline: none; }
+
+/* Dropdown */
+.nav-item.has-dropdown{ position: relative; }
 .dropdown{
-  display: none;  /* override any previous hover-only behaviour */
-  position: absolute;
+  display:none;
+  position:absolute;
   top: calc(100% + 10px);
   left: 0;
   min-width: 260px;
   padding: 8px;
   border-radius: 16px;
   background: rgba(15,27,51,.98);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
 
-.nav-item.has-dropdown.open > .dropdown{ display: block; }
+/* show when open */
+.nav-item.has-dropdown.open > .dropdown{ display:block; }
 
-/* Keep hover/focus support on desktop too */
+/* also show on hover/focus desktop */
 @media (min-width: 861px){
   .nav-item.has-dropdown:hover > .dropdown,
-  .nav-item.has-dropdown:focus-within > .dropdown{
-    display: block;
-  }
+  .nav-item.has-dropdown:focus-within > .dropdown{ display:block; }
 }
 
-/* Dropdown links */
-.dropdown a{
-  display: block;
+.dropdown-link{
+  display:block;
   padding: 10px 12px;
   border-radius: 12px;
-  color: var(--muted);
   font-size: 14px;
+  color: var(--muted);
 }
-.dropdown a:hover{
+.dropdown-link:hover{
   background: rgba(255,255,255,.06);
   color: var(--text);
 }
-.dropdown a[aria-current="page"]{
-  background: rgba(59,224,198,.12);
-  color: var(--text);
-  border: 1px solid rgba(59,224,198,.22);
-}
 
-/* CTA link on nav */
+/* CTA */
 .nav-cta{
-  margin-left: 6px;
   border: 1px solid rgba(59,224,198,.38);
   background: linear-gradient(135deg, rgba(59,224,198,.20), rgba(122,167,255,.14));
   color: var(--text);
 }
 .nav-cta:hover{ filter: brightness(1.08); }
 
-/* Mobile behaviour: dropdown becomes inline (stacked) when open */
-@media (max-width: 860px){
-  .nav-links{
-    align-items: stretch;
-  }
+/* Mobile menu */
+.nav-toggle{
+  display:none;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
 
-  .nav-item.has-dropdown{
-    width: 100%;
+@media (max-width: 860px){
+  .nav-toggle{ display:inline-flex; }
+
+  .nav-links{
+    display:none;
+    position: fixed;
+    inset: 68px 16px auto 16px;
+    background: rgba(15,27,51,.98);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    padding: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
   }
+  .nav-links.open{ display:flex; }
 
   .dropdown{
     position: static;
-    box-shadow: none;
     border: none;
+    box-shadow: none;
     background: transparent;
     padding: 0 0 0 10px;
     min-width: auto;
   }
-
-  .nav-item.has-dropdown.open > .dropdown{ display: block; }
-
-  /* ensure button spans full width on mobile */
-  .nav-button{
-    width: 100%;
-    justify-content: space-between;
-  }
 }
 
-/* Improve focus outlines */
+/* Accessibility focus */
 .nav-link:focus,
-.dropdown a:focus,
+.dropdown-link:focus,
 .nav-toggle:focus{
   outline: 2px solid rgba(59,224,198,.35);
   outline-offset: 2px;
