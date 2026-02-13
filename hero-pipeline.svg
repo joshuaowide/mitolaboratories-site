@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0f1b33"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#3be0c6" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#3be0c6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="20%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#7aa7ff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#7aa7ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+  <g opacity="0.16" stroke="#fff">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+  <g fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)">
+    <rect x="140" y="240" width="1320" height="110" rx="26"/>
+    <rect x="140" y="410" width="1320" height="110" rx="26"/>
+    <rect x="140" y="580" width="1320" height="110" rx="26"/>
+  </g>
+  <g fill="#e9eef7" font-family="system-ui,-apple-system,Segoe UI,Roboto,Arial" font-weight="700">
+    <text x="180" y="310" font-size="30">Discovery</text>
+    <text x="180" y="480" font-size="30" opacity="0.75">Preclinical</text>
+    <text x="180" y="650" font-size="30" opacity="0.75">Clinical</text>
+  </g>
+</svg>
