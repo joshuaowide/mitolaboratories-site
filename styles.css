@@ -321,3 +321,103 @@ img{max-width:100%;display:block}
   font-size: 13px;
 }
 .footer a{color: var(--text)}
+
+/* =========================
+   NAV UPGRADE (DROPDOWNS)
+   ========================= */
+
+.nav-item.has-dropdown { position: relative; }
+
+.nav-button{
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Desktop dropdown: hidden by default, shown when .open is applied */
+.dropdown{
+  display: none;  /* override any previous hover-only behaviour */
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 260px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(15,27,51,.98);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.nav-item.has-dropdown.open > .dropdown{ display: block; }
+
+/* Keep hover/focus support on desktop too */
+@media (min-width: 861px){
+  .nav-item.has-dropdown:hover > .dropdown,
+  .nav-item.has-dropdown:focus-within > .dropdown{
+    display: block;
+  }
+}
+
+/* Dropdown links */
+.dropdown a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.dropdown a:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+.dropdown a[aria-current="page"]{
+  background: rgba(59,224,198,.12);
+  color: var(--text);
+  border: 1px solid rgba(59,224,198,.22);
+}
+
+/* CTA link on nav */
+.nav-cta{
+  margin-left: 6px;
+  border: 1px solid rgba(59,224,198,.38);
+  background: linear-gradient(135deg, rgba(59,224,198,.20), rgba(122,167,255,.14));
+  color: var(--text);
+}
+.nav-cta:hover{ filter: brightness(1.08); }
+
+/* Mobile behaviour: dropdown becomes inline (stacked) when open */
+@media (max-width: 860px){
+  .nav-links{
+    align-items: stretch;
+  }
+
+  .nav-item.has-dropdown{
+    width: 100%;
+  }
+
+  .dropdown{
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 10px;
+    min-width: auto;
+  }
+
+  .nav-item.has-dropdown.open > .dropdown{ display: block; }
+
+  /* ensure button spans full width on mobile */
+  .nav-button{
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Improve focus outlines */
+.nav-link:focus,
+.dropdown a:focus,
+.nav-toggle:focus{
+  outline: 2px solid rgba(59,224,198,.35);
+  outline-offset: 2px;
+}
+
