@@ -12,13 +12,7 @@
     });
   }
 
-  function closeMobileNav() {
-    if (!navLinks) return;
-    navLinks.classList.remove("open");
-    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
-  }
-
-  // Mobile menu toggle
+  // Mobile menu
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
@@ -27,7 +21,7 @@
     });
   }
 
-  // Dropdown toggles (tap/click)
+  // Dropdown toggles
   dropdownToggles.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -41,32 +35,21 @@
     });
   });
 
-  // Close menus when clicking outside
+  // Click outside closes
   document.addEventListener("click", (e) => {
-    const target = e.target;
-    const clickedInsideNav = target.closest(".site-header");
-    if (!clickedInsideNav) {
+    if (!e.target.closest(".site-header")) {
       closeAllDropdowns();
-      closeMobileNav();
+      if (navLinks) navLinks.classList.remove("open");
+      if (navToggle) navToggle.setAttribute("aria-expanded", "false");
     }
   });
 
-  // ESC closes everything
+  // Esc closes
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeAllDropdowns();
-      closeMobileNav();
+      if (navLinks) navLinks.classList.remove("open");
+      if (navToggle) navToggle.setAttribute("aria-expanded", "false");
     }
   });
-
-  // If user clicks a normal link on mobile, close menu
-  if (navLinks) {
-    navLinks.addEventListener("click", (e) => {
-      const a = e.target.closest("a");
-      if (!a) return;
-      // allow mailto to behave normally, but still close nav
-      closeAllDropdowns();
-      closeMobileNav();
-    });
-  }
 })();
