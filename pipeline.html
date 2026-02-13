@@ -9,9 +9,8 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
 <header class="site-header">
-  <div class="container navbar">
+  <div class="nav-shell">
     <a class="brand" href="index.html">
       <div class="brand-mark" aria-hidden="true"></div>
       <div class="brand-name">
@@ -20,27 +19,23 @@
       </div>
     </a>
 
-    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
       Menu
     </button>
 
-    <nav id="primary-nav" class="nav-links" data-nav-links aria-label="Primary">
+    <nav id="primary-nav" class="nav-links" data-nav-links aria-label="Primary navigation">
       <a class="nav-link" href="index.html">Home</a>
 
-      <!-- Our Company dropdown -->
       <div class="nav-item has-dropdown">
-        <button class="nav-link nav-button"
-                type="button"
-                data-dropdown-toggle
-                aria-expanded="false"
-                aria-controls="menu-company">
+        <button class="nav-link nav-button" type="button"
+                data-dropdown-toggle aria-expanded="false" aria-controls="company-menu">
           Our Company <span class="chev" aria-hidden="true"></span>
         </button>
 
-        <div class="dropdown" id="menu-company" role="menu" aria-label="Our Company">
-          <a role="menuitem" href="company-about.html">About us</a>
-          <a role="menuitem" href="company-team.html">Meet our team</a>
-          <a role="menuitem" href="company-news.html">News &amp; Events</a>
+        <div class="dropdown" id="company-menu" role="menu" aria-label="Our Company">
+          <a class="dropdown-link" role="menuitem" href="company-about.html">About us</a>
+          <a class="dropdown-link" role="menuitem" href="company-team.html">Meet our team</a>
+          <a class="dropdown-link" role="menuitem" href="company-news.html">News &amp; Events</a>
         </div>
       </div>
 
