@@ -310,7 +310,7 @@ img{max-width:100%;display:block}
 .hero{
   position: relative;
   padding: 64px 0 26px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .hero-grid{
@@ -322,6 +322,42 @@ img{max-width:100%;display:block}
 
 @media (max-width: 860px){
   .hero-grid{ grid-template-columns:1fr; }
+}
+
+/* Banner image layer */
+.hero-banner{
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/mitochondria-banner.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 45%;
+  opacity: .28;
+  pointer-events: none;
+  transform: scale(1.02);
+  filter: saturate(1.08) contrast(1.02);
+  z-index: 0;
+}
+
+/* Overlay for legibility */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(11,18,32,.92) 0%,
+    rgba(11,18,32,.72) 45%,
+    rgba(11,18,32,.92) 100%
+  );
+  pointer-events:none;
+  z-index: 1;
+}
+
+/* Hero content above overlay */
+.hero .container{
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1{
@@ -348,44 +384,6 @@ img{max-width:100%;display:block}
   flex-direction: column;
 }
 
-/* Hero banner graphic layer */
-.hero-banner{
-  position:absolute;
-  inset: 0;
-  background-image: url("assets/mitochondria-banner.svg");
-  background-size: cover;
-  background-position: center;
-  opacity: .22;
-  pointer-events: none;
-}
-
-/* Legibility overlay so text stays crisp over the banner */
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(
-    90deg,
-    rgba(11,18,32,.92) 0%,
-    rgba(11,18,32,.72) 45%,
-    rgba(11,18,32,.92) 100%
-  );
-  pointer-events:none;
-}
-
-/* Ensure hero content sits above banner + overlay */
-.hero .container{
-  position: relative;
-  z-index: 1;
-}
-
-.hero-banner{
-  transform: scale(1.02);
-  filter: saturate(1.08) contrast(1.02);
-}
-
-
-
 .hero-img{
   height: 240px;
   background: linear-gradient(135deg, rgba(122,167,255,.22), rgba(59,224,198,.18));
@@ -396,45 +394,6 @@ img{max-width:100%;display:block}
 
 .hero-card .hero-meta{
   padding: 16px 16px 18px;
-}
-
-.hero{
-  position: relative;
-  overflow: hidden;
-}
-
-/* Banner image */
-.hero-banner{
-  position: absolute;
-  inset: 0;
-  background-image: url("./assets/mitochondria-banner.svg"); /* note the ./ */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 45%;
-  opacity: .28;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Overlay for legibility */
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(
-    90deg,
-    rgba(11,18,32,.92) 0%,
-    rgba(11,18,32,.72) 45%,
-    rgba(11,18,32,.92) 100%
-  );
-  pointer-events:none;
-  z-index: 1;
-}
-
-/* Ensure content is above overlay */
-.hero .container{
-  position: relative;
-  z-index: 2;
 }
 
 
