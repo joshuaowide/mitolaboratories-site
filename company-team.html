@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mito Laboratories — Meet our team</title>
-  <meta name="description" content="Leadership and scientific team at Mito Laboratories." />
+  <meta name="description" content="Leadership and team at Mito Laboratories." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="nav-shell">
     <a class="brand" href="index.html">
@@ -34,7 +35,7 @@
 
         <div class="dropdown" id="company-menu" role="menu" aria-label="Our Company">
           <a class="dropdown-link" role="menuitem" href="company-about.html">About us</a>
-          <a class="dropdown-link" role="menuitem" href="company-team.html">Meet our team</a>
+          <a class="dropdown-link" role="menuitem" href="company-team.html" aria-current="page">Meet our team</a>
           <a class="dropdown-link" role="menuitem" href="company-news.html">News &amp; Events</a>
         </div>
       </div>
@@ -48,31 +49,30 @@
   </div>
 </header>
 
-
-
 <main id="main">
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <div class="kicker"><b>Our Company</b> · leadership</div>
-        <h1>Team and leadership</h1>
+        <h1>Meet our team</h1>
         <p>
-          Add short, credibility-forward bios. Keep it factual, concise, and aligned to what investors look for.
+          Building a mitochondria-centric platform requires rigorous thinking, disciplined execution, and a clear
+          translation path. We are assembling a team spanning science, development, and strategy.
         </p>
         <div class="btn-row">
-          <a class="btn primary" href="company-about.html">About the company</a>
-          <a class="btn" href="company-news.html">News &amp; events</a>
+          <a class="btn primary" href="company-about.html">About us</a>
+          <a class="btn" href="company-news.html">News &amp; Events</a>
         </div>
       </div>
 
-      <aside class="hero-card">
+      <aside class="hero-card" aria-label="Team principles">
         <div class="hero-img" style="background-image:url('assets/hero-company.jpg')"></div>
         <div class="hero-meta">
-          <h3 style="margin:0 0 8px;font-size:16px;">What investors want to see</h3>
+          <h3 style="margin:0 0 8px;font-size:16px;">What we prioritise</h3>
           <ul class="list">
-            <li>Scientific and translational capability</li>
-            <li>Execution track record</li>
-            <li>Advisors (optional, later)</li>
+            <li>Scientific rigour and measurement-first decisions</li>
+            <li>Practical, milestone-driven development</li>
+            <li>Responsible communication and credibility</li>
           </ul>
         </div>
       </aside>
@@ -81,27 +81,55 @@
 
   <section class="section">
     <div class="container">
-      <h2>Leadership (placeholders)</h2>
+      <h2>Leadership</h2>
+      <p>Profiles below are initial and will expand as the company grows.</p>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>Founder / CEO</h3>
-          <p>Short bio: background, expertise, and relevance to platform + company building.</p>
-        </div>
-        <div class="card">
-          <h3>Scientific Lead</h3>
-          <p>Short bio: domain expertise, publications, and translational experience.</p>
-        </div>
-        <div class="card">
-          <h3>Operations / BD</h3>
-          <p>Short bio: execution, fundraising, partnerships, governance.</p>
+      <div class="card" style="padding:18px;">
+        <div style="display:grid;grid-template-columns: 160px 1fr;gap:18px;align-items:start;">
+          <!-- Photo placeholder -->
+          <div style="
+            width:160px;height:160px;border-radius:18px;
+            border:1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.06);
+            display:flex;align-items:center;justify-content:center;
+            overflow:hidden;">
+            <img
+              src="assets/team/joshua-owide.jpg"
+              alt="Portrait of Joshua Owide"
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;color:rgba(233,238,247,.7);font-size:13px;text-align:center;padding:10px;&quot;>Add photo<br/>assets/team/joshua-owide.jpg</div>';"
+            />
+          </div>
+
+          <!-- Bio -->
+          <div>
+            <h3 style="margin:0 0 6px;font-size:18px;">Joshua Owide</h3>
+            <p style="margin:0 0 10px;color:var(--muted);">
+              <strong>Founder</strong>
+            </p>
+
+            <p style="margin:0 0 12px;color:var(--muted);">
+              Joshua (“Josh”) Owide holds a BSc in Physiology and Pharmacology. Over the past 20 years, he has worked as a
+              pharmaceutical industry analyst, with commentary featured across a range of media outlets, and has contributed as
+              an author to industry publications, including Deloitte’s <em>Return on Pharmaceutical Innovation</em>.
+            </p>
+
+            <p style="margin:0;color:var(--muted);">
+              His motivation to build Mito Laboratories stems from a long-standing focus on mitochondrial biology that began
+              during undergraduate research into apoptosis, and evolved into a conviction that mitochondria-centric programs
+              can open differentiated therapeutic opportunities in areas of high unmet need.
+            </p>
+          </div>
         </div>
       </div>
 
       <hr class="hr" />
 
       <h2>Advisors (optional)</h2>
-      <p>We can add an Advisors section later, once confirmed and permissioned.</p>
+      <p style="color:var(--muted);margin-bottom:0;">
+        We can add an Advisors section once confirmed and permissioned. For early-stage companies, we recommend keeping this
+        page lean and highly credible.
+      </p>
     </div>
   </section>
 </main>
