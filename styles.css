@@ -290,6 +290,9 @@ img{max-width:100%;display:block}
   }
   .nav-links.open{ display:flex; }
 
+   }
+
+
 
 /* Accessibility focus */
 .nav-link:focus,
@@ -344,6 +347,44 @@ img{max-width:100%;display:block}
   display:flex;
   flex-direction: column;
 }
+
+/* Hero banner graphic layer */
+.hero-banner{
+  position:absolute;
+  inset: 0;
+  background-image: url("assets/mitochondria-banner.svg");
+  background-size: cover;
+  background-position: center;
+  opacity: .22;
+  pointer-events: none;
+}
+
+/* Legibility overlay so text stays crisp over the banner */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(11,18,32,.92) 0%,
+    rgba(11,18,32,.72) 45%,
+    rgba(11,18,32,.92) 100%
+  );
+  pointer-events:none;
+}
+
+/* Ensure hero content sits above banner + overlay */
+.hero .container{
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner{
+  transform: scale(1.02);
+  filter: saturate(1.08) contrast(1.02);
+}
+
+
 
 .hero-img{
   height: 240px;
