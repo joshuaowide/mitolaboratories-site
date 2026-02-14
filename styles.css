@@ -338,7 +338,7 @@ img{max-width:100%;display:block}
     rgba(11,18,32,.92) 100%
   );
   pointer-events:none;
-  z-index: 0;   /* 👈 key change */
+  z-index: 0;
 }
 
 .hero .container{
