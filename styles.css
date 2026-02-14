@@ -119,17 +119,6 @@ img{max-width:100%;display:block}
   border-color: rgba(59,224,198,.22);
 }
 
-/* Chevron */
-.chev{
-  width: 10px;
-  height: 10px;
-  display:inline-block;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  margin-top:-2px;
-  opacity:.8;
-}
 
 /* CTA */
 .nav-cta{
