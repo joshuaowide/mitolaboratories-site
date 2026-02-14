@@ -124,7 +124,7 @@ img{max-width:100%;display:block}
 /* Dropdown */
 .dropdown{
   position:absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 6px);
   left: 0;
   min-width: 240px;
   background: rgba(15,27,51,.98);
