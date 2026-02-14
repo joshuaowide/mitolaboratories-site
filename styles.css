@@ -637,6 +637,14 @@ img{max-width:100%;display:block}
   }
 }
 
+   @media (min-width: 861px){
+  .nav-item.has-dropdown:hover > .dropdown,
+  .nav-item.has-dropdown:focus-within > .dropdown{
+    display:block;
+  }
+}
+
+
 }
 
 
