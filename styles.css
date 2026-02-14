@@ -124,7 +124,7 @@ img{max-width:100%;display:block}
 /* Dropdown */
 .dropdown{
   position:absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 5px);
   left: 0;
   min-width: 240px;
   background: rgba(15,27,51,.98);
@@ -383,7 +383,7 @@ img{max-width:100%;display:block}
 .dropdown{
   display:none;
   position:absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 5px);
   left: 0;
   min-width: 260px;
   padding: 8px;
@@ -530,7 +530,7 @@ img{max-width:100%;display:block}
 .dropdown{
   display:none;
   position:absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 5px);
   left: 0;
   min-width: 260px;
   padding: 8px;
