@@ -139,47 +139,84 @@ img{max-width:100%;display:block}
 }
 .nav-cta:hover{ filter: brightness(1.08); }
 
-/* Dropdown base */
-.nav-item.has-dropdown{ position: relative; }
+/* =========================
+   DROPDOWNS — FIXED
+   ========================= */
 
+/* Chevron rotates nicely */
+.chev{
+  transition: transform .15s ease;
+}
+
+/* Dropdown parent */
+.nav-item.has-dropdown{
+  position: relative;
+}
+
+/* Dropdown panel default = hidden */
 .dropdown{
   position: absolute;
   left: 0;
-  top: calc(100% - 2px);   /* overlaps the trigger by 2px = no gap */
+  top: calc(100% - 2px);  /* overlap the trigger by 2px (no gap) */
   min-width: 260px;
   padding: 8px;
   border-radius: 16px;
   background: rgba(15,27,51,.98);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  z-index: 1000;           /* ensure it sits above content */
+  z-index: 1000;
 
-  /* smooth reveal without creating a gap */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(0);      /* IMPORTANT: no downward shift */
-  transition: opacity .14s ease, visibility .14s ease;
+  transform: translateY(6px); /* hidden state slides in */
   pointer-events: none;
+
+  /* visibility delays ONLY when hiding */
+  transition: opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
 }
 
-/* Desktop hover + keyboard focus */
-@media (min-width: 861px){
-  .nav-item.has-dropdown:hover > .dropdown,
-  .nav-item.has-dropdown:focus-within > .dropdown{
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+/* Show dropdown on hover/focus (desktop) OR when JS adds .open (touch/mobile) */
+.nav-item.has-dropdown:hover > .dropdown,
+.nav-item.has-dropdown:focus-within > .dropdown,
+.nav-item.has-dropdown.open > .dropdown{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* IMPORTANT: no downward gap when open */
+  pointer-events: auto;
+
+  /* visibility becomes immediate when showing */
+  transition: opacity .15s ease, transform .15s ease, visibility 0s linear 0s;
+}
+
+/* Mobile: dropdown becomes an accordion (collapsed until tapped) */
+@media (max-width: 860px){
+  .nav-item.has-dropdown > .nav-link{
+    width: 100%;
+    justify-content: space-between;
   }
 
-  /* Bigger hover bridge to prevent flicker */
-  .nav-item.has-dropdown::after{
-    content:"";
-    position:absolute;
-    left:0;
-    top:100%;
-    width:100%;
-    height:28px;           /* increase bridge height */
-    background:transparent;
+  .dropdown{
+    position: static;
+    min-width: auto;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0 0 0 10px;
+
+    display: none;   /* collapsed by default */
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .nav-item.has-dropdown.open > .dropdown{
+    display: block;
+  }
+
+  .nav-item.has-dropdown.open > .nav-link .chev{
+    transform: rotate(225deg); /* points up */
   }
 }
 
