@@ -40,9 +40,22 @@
         </div>
       </div>
 
-      <a class="nav-link" href="pipeline.html">Pipeline</a>
-      <a class="nav-link" href="science.html">Science</a>
-      <a class="nav-link" href="disease-focus.html" aria-current="page">Disease focus</a>
+     <!-- Science dropdown (contains Pipeline / Science / Disease focus) -->
+<div class="nav-item has-dropdown">
+  <a class="nav-link" href="science.html">
+    Science <span class="chev" aria-hidden="true"></span>
+  </a>
+
+  <div class="dropdown" role="menu" aria-label="Science">
+    <a class="dropdown-link" role="menuitem" href="pipeline.html">Pipeline</a>
+    <a class="dropdown-link" role="menuitem" href="science.html">Philosophy</a>
+    <a class="dropdown-link" role="menuitem" href="disease-focus.html">Disease focus</a>
+  </div>
+</div>
+
+<!-- Rename the old Science link to Philosophy (this is now the standalone top link target) -->
+<!-- IMPORTANT: remove your old standalone Science link (it’s now inside the dropdown) -->
+
 
       <a class="nav-link nav-cta" href="mailto:info@mitolaboratories.com">Contact</a>
     </nav>
