@@ -140,19 +140,48 @@ img{max-width:100%;display:block}
 .nav-cta:hover{ filter: brightness(1.08); }
 
 /* Dropdown base */
-.nav-item{ position: relative; }
 .nav-item.has-dropdown{ position: relative; }
 
 .dropdown{
-  position:absolute;
-  top: 100%;            /* remove gap to reduce flicker */
+  position: absolute;
   left: 0;
+  top: calc(100% - 2px);   /* overlaps the trigger by 2px = no gap */
   min-width: 260px;
   padding: 8px;
   border-radius: 16px;
   background: rgba(15,27,51,.98);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  z-index: 1000;           /* ensure it sits above content */
+
+  /* smooth reveal without creating a gap */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);      /* IMPORTANT: no downward shift */
+  transition: opacity .14s ease, visibility .14s ease;
+  pointer-events: none;
+}
+
+/* Desktop hover + keyboard focus */
+@media (min-width: 861px){
+  .nav-item.has-dropdown:hover > .dropdown,
+  .nav-item.has-dropdown:focus-within > .dropdown{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Bigger hover bridge to prevent flicker */
+  .nav-item.has-dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:100%;
+    width:100%;
+    height:28px;           /* increase bridge height */
+    background:transparent;
+  }
+}
 
   /* smooth reveal */
   opacity: 0;
