@@ -398,6 +398,46 @@ img{max-width:100%;display:block}
   padding: 16px 16px 18px;
 }
 
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Banner image */
+.hero-banner{
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/mitochondria-banner.svg"); /* note the ./ */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 45%;
+  opacity: .28;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Overlay for legibility */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(11,18,32,.92) 0%,
+    rgba(11,18,32,.72) 45%,
+    rgba(11,18,32,.92) 100%
+  );
+  pointer-events:none;
+  z-index: 1;
+}
+
+/* Ensure content is above overlay */
+.hero .container{
+  position: relative;
+  z-index: 2;
+}
+
+
 .kicker{
   display:inline-flex;
   gap:8px;
