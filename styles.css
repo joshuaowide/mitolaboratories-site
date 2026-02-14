@@ -620,6 +620,23 @@ img{max-width:100%;display:block}
   .nav-item.has-dropdown:focus-within > .dropdown{
     display: block;
   }
+
+   @media (min-width: 861px){
+  .nav-item.has-dropdown{
+    padding-bottom: 10px; /* creates a hover zone under the label */
+  }
+
+  .nav-item.has-dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:100%;
+    width:100%;
+    height:14px;          /* bridge height */
+    background:transparent;
+  }
+}
+
 }
 
 
