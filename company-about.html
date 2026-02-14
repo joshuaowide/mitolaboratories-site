@@ -26,31 +26,38 @@
     <nav id="primary-nav" class="nav-links" data-nav-links aria-label="Primary navigation">
       <a class="nav-link" href="index.html">Home</a>
 
-      <!-- Our Company dropdown (hover) -->
-      <div class="nav-item has-dropdown">
-        <a class="nav-link" href="company-about.html">
-          Our Company <span class="chev" aria-hidden="true"></span>
-        </a>
+     <!-- Our Company dropdown -->
+<div class="nav-item has-dropdown">
+  <a class="nav-link" href="company-about.html"
+     data-dropdown-toggle
+     aria-expanded="false"
+     aria-controls="company-menu">
+    Our Company <span class="chev" aria-hidden="true"></span>
+  </a>
 
-        <div class="dropdown" id="company-menu" role="menu" aria-label="Our Company">
-          <a class="dropdown-link" role="menuitem" href="company-about.html" aria-current="page">About us</a>
-          <a class="dropdown-link" role="menuitem" href="company-team.html">Meet our team</a>
-          <a class="dropdown-link" role="menuitem" href="company-news.html">News &amp; Events</a>
-        </div>
-      </div>
+  <div class="dropdown" id="company-menu" role="menu" aria-label="Our Company">
+    <a class="dropdown-link" role="menuitem" href="company-about.html" aria-current="page">About us</a>
+    <a class="dropdown-link" role="menuitem" href="company-team.html">Meet our team</a>
+    <a class="dropdown-link" role="menuitem" href="company-news.html">News &amp; Events</a>
+  </div>
+</div>
 
-      <!-- Science dropdown (hover) -->
-      <div class="nav-item has-dropdown">
-        <a class="nav-link" href="science.html">
-          Science <span class="chev" aria-hidden="true"></span>
-        </a>
+<!-- Science dropdown -->
+<div class="nav-item has-dropdown">
+  <a class="nav-link" href="science.html"
+     data-dropdown-toggle
+     aria-expanded="false"
+     aria-controls="science-menu">
+    Science <span class="chev" aria-hidden="true"></span>
+  </a>
 
-        <div class="dropdown" role="menu" aria-label="Science">
-          <a class="dropdown-link" role="menuitem" href="pipeline.html">Pipeline</a>
-          <a class="dropdown-link" role="menuitem" href="science.html">Philosophy</a>
-          <a class="dropdown-link" role="menuitem" href="disease-focus.html">Disease focus</a>
-        </div>
-      </div>
+  <div class="dropdown" id="science-menu" role="menu" aria-label="Science">
+    <a class="dropdown-link" role="menuitem" href="pipeline.html">Pipeline</a>
+    <a class="dropdown-link" role="menuitem" href="science.html">Philosophy</a>
+    <a class="dropdown-link" role="menuitem" href="disease-focus.html">Disease focus</a>
+  </div>
+</div>
+
 
       <a class="nav-link nav-cta" href="mailto:info@mitolaboratories.com">Contact</a>
     </nav>
