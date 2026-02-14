@@ -324,20 +324,6 @@ img{max-width:100%;display:block}
   .hero-grid{ grid-template-columns:1fr; }
 }
 
-/* Banner image layer */
-.hero-banner{
-  position: absolute;
-  inset: 0;
-  background-image: url("./assets/mitochondria-banner.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 45%;
-  opacity: .28;
-  pointer-events: none;
-  transform: scale(1.02);
-  filter: saturate(1.08) contrast(1.02);
-  z-index: 0;
-}
 
 /* Overlay for legibility */
 .hero::after{
